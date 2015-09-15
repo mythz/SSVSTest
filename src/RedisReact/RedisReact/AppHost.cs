@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Reflection;
-using System.Web;
+﻿using System.IO;
 using Funq;
 using RedisReact.ServiceInterface;
 using ServiceStack;
@@ -20,7 +14,7 @@ namespace RedisReact
         /// Base constructor requires a name and assembly to locate web service classes. 
         /// </summary>
         public AppHost()
-            : base("RedisReact", typeof(MyServices).Assembly)
+            : base("RedisReact", typeof(RedisServices).Assembly)
         {
             var customSettings = new FileInfo(@"~/appsettings.txt".MapHostAbsolutePath());
             AppSettings = customSettings.Exists
@@ -35,9 +29,7 @@ namespace RedisReact
         /// <param name="container"></param>
         public override void Configure(Container container)
         {
-            //Config examples
-            //this.Plugins.Add(new PostmanFeature());
-            //this.Plugins.Add(new CorsFeature());
+            SharedUtils.Configure(this);
 
             SetConfig(new HostConfig
             {

@@ -1,8 +1,6 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using ServiceStack;
 using ServiceStack.Testing;
-using RedisReact.ServiceModel;
 using RedisReact.ServiceInterface;
 
 namespace RedisReact.Tests
@@ -14,7 +12,7 @@ namespace RedisReact.Tests
 
         public UnitTests()
         {
-            appHost = new BasicAppHost(typeof(MyServices).Assembly)
+            appHost = new BasicAppHost(typeof(RedisServices).Assembly)
             {
                 ConfigureContainer = container =>
                 {
@@ -28,16 +26,6 @@ namespace RedisReact.Tests
         public void TestFixtureTearDown()
         {
             appHost.Dispose();
-        }
-
-        [Test]
-        public void TestMethod1()
-        {
-            var service = appHost.Container.Resolve<MyServices>();
-
-            var response = (HelloResponse)service.Any(new Hello { Name = "World" });
-
-            Assert.That(response.Result, Is.EqualTo("Hello, World!"));
         }
     }
 }

@@ -77,21 +77,28 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="css\app.min.css" />
-    <EmbeddedResource Include="js\app.min.js" />
-    <EmbeddedResource Include="js\app.jsx.js" />
-    <EmbeddedResource Include="img\react-logo.png" />
-    <EmbeddedResource Include="lib\css\lib.min.css" />
-    <EmbeddedResource Include="lib\fonts\glyphicons-halflings-regular.svg" />
-    <EmbeddedResource Include="lib\js\lib.min.js" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="default.cshtml" />
+    <EmbeddedResource Include="js\app.jsx.js" />
+    <EmbeddedResource Include="js\app.min.js" />
+    <EmbeddedResource Include="lib\css\lib.min.css" />
+    <EmbeddedResource Include="lib\js\lib.min.js" />
+    <EmbeddedResource Include="lib\css\octicons-local.ttf" />
+    <EmbeddedResource Include="lib\css\octicons.ttf" />
+    <EmbeddedResource Include="lib\css\octicons.woff" />
     <EmbeddedResource Include="lib\fonts\glyphicons-halflings-regular.eot" />
     <EmbeddedResource Include="lib\fonts\glyphicons-halflings-regular.ttf" />
     <EmbeddedResource Include="lib\fonts\glyphicons-halflings-regular.woff" />
     <EmbeddedResource Include="lib\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="packages.config" />
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="img\ajax-loader.gif" />
+    <EmbeddedResource Include="img\logo-32.png" />
+    <EmbeddedResource Include="img\logo.ico" />
+    <EmbeddedResource Include="img\react-logo.png" />
+    <EmbeddedResource Include="img\redis-logo.png" />
+    <EmbeddedResource Include="lib\fonts\glyphicons-halflings-regular.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

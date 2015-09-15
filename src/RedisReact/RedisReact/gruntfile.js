@@ -7,6 +7,7 @@ var COPY_FILES = [
     { src: './App_Data/**/*', dest: 'App_Data/', host: WEB },
     { src: './Global.asax', host: WEB },
     { src: './bower_components/bootstrap/dist/fonts/*.*', dest: 'lib/fonts/' },
+    { src: './bower_components/octicons/octicons/*.*f', dest: 'lib/css/' },
     { src: './js/web.js', dest: 'js/', host: WEB },
     { src: './wwwroot_build/deploy/*.*', host: WEB },
     {
@@ -184,7 +185,7 @@ module.exports = function (grunt) {
                         copyTask = copyTask.pipe(copy.after());
                     }
 
-                    var hosts = [];
+                    var hosts = [WEB, NATIVE];
                     if (copy.host) {
                         hosts = typeof copy.host == 'string'
                             ? [copy.host]
